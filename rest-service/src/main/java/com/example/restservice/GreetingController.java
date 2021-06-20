@@ -13,7 +13,9 @@ public class GreetingController {
 	private final AtomicLong counter = new AtomicLong();
 
 	@GetMapping("/greeting")
-	public Greeting greeting(@RequestParam(value = "name", defaultValue = "World") String name) {
-		return new Greeting(counter.incrementAndGet(), String.format(template, name));
+	public Greeting greeting(
+		@RequestParam(value = "name", defaultValue = "World") String name, 
+		@RequestParam(value = "wordCount", defaultValue = "0") long wordCount) {
+		return new Greeting(counter.addAndGet(wordCount), String.format(template, name));
 	}
 }
