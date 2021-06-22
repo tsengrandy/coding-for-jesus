@@ -2,13 +2,13 @@ package com.example.restservice;
 
 public class WordCount {
 
-	private final long count;
+	private final int count;
 
-	public WordCount(long count) {
+	public WordCount(int count) {
 		this.count = count;
 	}
 
-	public long getcount() {
+	public int getcount() {
 		return count;
 	}
 }

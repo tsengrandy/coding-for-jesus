@@ -1,6 +1,6 @@
 package com.example.restservice;
 
-import java.util.concurrent.atomic.AtomicLong;
+import java.util.concurrent.atomic.AtomicInteger;
 import java.util.ArrayList;
 
 import org.springframework.web.bind.annotation.PostMapping;
@@ -10,18 +10,20 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class MessageController {
 
-	private final AtomicLong counter = new AtomicLong();
+	private final AtomicInteger counter = new AtomicInteger();
 	private final ArrayList<Integer> ids = new ArrayList<Integer>();
 
 	@PostMapping("/message")
 	public WordCount message(@RequestBody Message message) {
 		if (ids.contains(message.getId())) {
+			System.out.println("Id already exists: " + message.getId());
 			return new WordCount(counter.get());
 		} else {
 			ids.add(message.getId());
-			String[] words = message.getMessage().split("\\s");
-			return new WordCount(counter.addAndGet(words.length));
+			String[] words = message.getMessage().trim().split("\\s+");
+			return message.getMessage().isBlank() 
+			? new WordCount(counter.get()) 
+			: new WordCount(counter.addAndGet(words.length));
 		}
 	}
 }
-//assuming you can't send empty messages
