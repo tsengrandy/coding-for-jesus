@@ -9,3 +9,4 @@ How to build and run the project:
 - Change id and message fields to send varied data
 # notes
 - Service is deployed on EC2 `http://ec2-34-218-226-30.us-west-2.compute.amazonaws.com:8080/message` Note that this instance will remember all ids since the instance inception
+- Would love feedback on the code or even technology choice. This was my first time using Java, Spring, and Gradle.
