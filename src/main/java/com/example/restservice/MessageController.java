@@ -9,6 +9,17 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 public class MessageController {
+	/** 
+	 * break down message into id and message
+	 * check IDtable if id exists already
+	 * if so, return TOTALtable word count
+	 * if not, check if message is empty
+	 * if so, return TOTALtable word count
+	 * if not, splice message to find word count
+	 * add up TOTALtable word count with message word count
+	 * store new value into TOTALtable word count
+	 * return that word count
+	*/
 
 	private final AtomicInteger counter = new AtomicInteger();
 	private final ArrayList<Integer> ids = new ArrayList<Integer>();
