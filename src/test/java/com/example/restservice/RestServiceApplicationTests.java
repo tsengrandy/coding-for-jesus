@@ -7,9 +7,5 @@ import org.springframework.boot.test.context.SpringBootTest;
 class RestServiceApplicationTests {
 
 	//Imagine lots of super effective unit and integration tests here!!!
-	@Test
-	void contextLoads() {
-
-	}
 
 }
