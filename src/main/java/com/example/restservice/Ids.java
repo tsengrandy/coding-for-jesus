@@ -6,20 +6,22 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
-public class MessageId {
+public class Ids {
 
 	@Id
-	private int id;
+	private long id;
 
-	public MessageId(int id) {
+	public Ids(){}
+
+	public Ids(long id) {
 		this.id = id;
 	}
 
-	public int getId() {
+	public long getId() {
 		return id;
 	}
 	
-	public void setId(int id) {
+	public void setId(long id) {
 		this.id = id;
 	}
 }
