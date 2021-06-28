@@ -2,15 +2,15 @@ package com.example.restservice;
 
 public class Message {
 
-	private final int id;
-	private final String message;
+	private long id;
+	private String message;
 
-	public Message(int id, String message) {
+	public Message(long id, String message) {
 		this.id = id;
 		this.message = message;
 	}
 
-	public int getId() {
+	public long getId() {
 		return id;
 	}
 
